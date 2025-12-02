@@ -58,3 +58,16 @@ df['GradeClass_Decoded'] = df['GradeClass'].map(grade_conversion)
 # Quick print to show the 4 new decoded columns
 print("\n--- NEW DECODED COLUMNS ADDED ---")
 print(df[['Ethnicity_Decoded', 'Education_Decoded', 'Tutoring_Decoded', 'GradeClass_Decoded']].head(5))
+
+# --- EXPORT DECODED DATA ---
+
+# Define the output file path for the DataFrame with the 19 columns
+output_path = "C:/Users/Admin/Documents/GitHub/students-analysis-pandas/Student_performance_decoded.csv"
+
+# Save the DataFrame to a new CSV file. 
+# index=False prevents Pandas from writing the DataFrame index (0, 1, 2...) as a new column in the CSV.
+df.to_csv(output_path, index=False)
+
+# Print confirmation message in English
+print("\n--- Data Export Successful ---")
+print("Decoded file saved to:", output_path)

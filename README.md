@@ -1,0 +1,72 @@
+## 📚 Dataset Details: `Student_performance_data.csv`
+
+### 1. Source and Overview
+
+The data used for this analysis is sourced from the `Student_performance_data_.csv` file, originally referenced in the Kaggle notebook: [https://www.kaggle.com/code/annastasy/predicting-students-grades/input](https://www.kaggle.com/code/annastasy/predicting-students-grades/input)
+
+> This dataset is a widely **available anonymized compilation** of **2,392 records** (Student ID from 1001 to 3392), often associated with secondary school student data (potentially sourced from a U.S. school context). It contains key attributes related to student performance, including **demographics, social factors, study habits, and final grades**.
+
+---
+
+### 2. Column Dictionary (Feature Descriptions)
+
+This section details all 15 columns, including the necessary code mappings for the analysis.
+
+#### Identification and Demographics
+
+| Feature | Description | Range / Mapping |
+| :--- | :--- | :--- |
+| **StudentID** | A unique identifier assigned to each student. | 1001 to 3392 |
+| **Age** | The age of the students. | 15 to 18 years |
+| **Gender** | Gender of the students (Binary). | **0**: Male, **1**: Female |
+| **Ethnicity** | The ethnicity of the students (Categorical). | **0**: Caucasian, **1**: African American, **2**: Asian, **3**: Other |
+
+#### Parental and Social Factors
+
+| Feature | Description | Mapping |
+| :--- | :--- | :--- |
+| **ParentalEducation** | The education level of the parents (Ordinal). | **0**: None, **1**: High School, **2**: Some College, **3**: Bachelor's, **4**: Higher |
+| **ParentalSupport** | The level of parental support (Ordinal). | **0**: Very Low, **1**: Low, **2**: Moderate, **3**: High, **4**: Very High |
+
+#### Study and Extracurricular Habits
+
+| Feature | Description | Range / Mapping |
+| :--- | :--- | :--- |
+| **StudyTimeWeekly** | Weekly study time in hours (Continuous). | 0 to 20 hours |
+| **Absences** | Number of absences during the school year. | 0 to 30 |
+| **Tutoring** | Tutoring status (Binary). | **0**: No, **1**: Yes |
+| **Extracurricular** | Participation in extracurricular activities (Binary). | **0**: No, **1**: Yes |
+| **Sports** | Participation in sports (Binary). | **0**: No, **1**: Yes |
+| **Music** | Participation in music activities (Binary). | **0**: No, **1**: Yes |
+| **Volunteering** | Participation in volunteering (Binary). | **0**: No, **1**: Yes |
+
+#### Academic Performance (Target Variables)
+
+| Feature | Description | Mapping |
+| :--- | :--- | :--- |
+| **GPA** | **Grade Point Average** on a continuous scale. | 0.0 to 4.0 |
+| **GradeClass** | **Target Variable:** Classification of final grades based on GPA (Ordinal). | **0**: 'A' (GPA $\geq 3.5$) / **1**: 'B' ($3.0 \leq$ GPA $< 3.5$) / **2**: 'C' ($2.5 \leq$ GPA $< 3.0$) / **3**: 'D' ($2.0 \leq$ GPA $< 2.5$) / **4**: 'F' (GPA $< 2.0$) |
+
+---
+
+## 🖼️ 3. Initial Data Inspection in Excel
+
+### 3.1. CSV Load and Formatting (`Student_performance_data_visual.xlsx`)
+
+The raw CSV file presented issues upon initial loading due to the US/UK format (dot `.` as decimal separator) conflicting with local Excel settings. This caused the numerical columns (**`StudyTimeWeekly`** and **`GPA`**) to display incorrect, long values.
+
+The data was corrected using the "Text to Columns" feature, specifying the dot as the decimal separator, and the file was saved as **`Student_performance_data_visual.xlsx`** for visual inspection.
+
+![Initial Data Load and Formatting](assets/student_data_visual_load.png)
+
+---
+
+### 3.2. Categorical Variable Decoding (`Student_performance_data_visual_text.xlsx`)
+
+For maximum readability, the numeric codes (e.g., `0`, `1`, `2`) in columns like `Gender`, `Ethnicity`, and `GradeClass` were manually replaced with their corresponding text labels (`Male`, `Caucasian`, `A`, etc.). The result was saved as **`Student_performance_data_visual_text.xlsx`**.
+
+![Data after Text Decoding](assets/student_data_visual_text_decoded.png)
+
+> **⚠️ Note on Process:** Executing these multiple find-and-replace operations in Excel is time-consuming and manual. This process will be handled efficiently and reproducibly using the `.replace()` and `.map()` functions in **Pandas** code.
+
+---

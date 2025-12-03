@@ -81,10 +81,11 @@ To ensure the analysis is scalable and fully reproducible, all subsequent steps 
 
 ### 4.1. Loading and Decoding Raw Data
 
-The numeric codes (e.g., `0`, `1`, `2`) from the raw data are transformed into human-readable text labels using Pandas' `.map()` function and **Conversion Dictionaries**. This process creates **four new decoded columns** while preserving the original numeric data.
+The numeric codes (e.g., `0`, `1`, `2`) from the raw data are transformed into human-readable text labels using Pandas' `.map()` function and **Conversion Dictionaries**. This process creates **five new decoded columns** while preserving the original numeric data.
 
 | Original Column | Conversion Type | New Decoded Column |
 | :--- | :--- | :--- |
+| **Gender** | `{0: 'Male', 1: 'Female'}` | **Gender_Decoded** |
 | **Ethnicity** | `{0: 'Caucasian', ...}` | **Ethnicity_Decoded** |
 | **ParentalEducation** | `{0: 'None', ...}` | **Education_Decoded** |
 | **Tutoring** | `{0: 'No', 1: 'Yes'}` | **Tutoring_Decoded** |

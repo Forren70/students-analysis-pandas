@@ -25,7 +25,7 @@ education_conversion = {
     0: 'None',
     1: 'High School',
     2: 'Some College',
-    3: 'Bachelor\'s',
+    3: "Bachelor's",
     4: 'Higher'
 }
 
@@ -35,7 +35,13 @@ tutoring_conversion = {
     1: 'Yes'
 }
 
-# 4. GradeClass (0: A, 4: F)
+# 4. Gender (0: Male, 1: Female)
+gender_conversion = {
+    0: 'Male',
+    1: 'Female'
+}
+
+# 5. GradeClass (0: A, 4: F)
 grade_conversion = {
     0: 'A',
     1: 'B',
@@ -50,24 +56,27 @@ grade_conversion = {
 df['Ethnicity_Decoded'] = df['Ethnicity'].map(ethnicity_conversion)
 df['Education_Decoded'] = df['ParentalEducation'].map(education_conversion)
 df['Tutoring_Decoded'] = df['Tutoring'].map(tutoring_conversion)
+df['Gender_Decoded'] = df['Gender'].map(gender_conversion)
 df['GradeClass_Decoded'] = df['GradeClass'].map(grade_conversion)
 
 
 # --- VERIFICATION ---
 
-# Quick print to show the 4 new decoded columns
+# Quick print to show the 5 new decoded columns
 print("\n--- NEW DECODED COLUMNS ADDED ---")
-print(df[['Ethnicity_Decoded', 'Education_Decoded', 'Tutoring_Decoded', 'GradeClass_Decoded']].head(5))
+print(df[['Gender_Decoded', 'Ethnicity_Decoded', 'Education_Decoded', 'Tutoring_Decoded', 'GradeClass_Decoded']].head(5))
+
 
 # --- EXPORT DECODED DATA ---
 
-# Define the output file path for the DataFrame with the 19 columns
+# Define the output file path for the DataFrame with the 20 columns
 output_path = "C:/Users/Admin/Documents/GitHub/students-analysis-pandas/Student_performance_decoded.csv"
 
 # Save the DataFrame to a new CSV file. 
-# index=False prevents Pandas from writing the DataFrame index (0, 1, 2...) as a new column in the CSV.
 df.to_csv(output_path, index=False)
 
-# Print confirmation message in English
+# Print confirmation message after exporting
 print("\n--- Data Export Successful ---")
 print("Decoded file saved to:", output_path)
+
+

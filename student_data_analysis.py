@@ -80,3 +80,19 @@ print("\n--- Data Export Successful ---")
 print("Decoded file saved to:", output_path)
 
 
+# ---  VISUALIZATION ---
+
+# Count values in the Ethnicity_Decoded column
+ethnicity_counts = df['Ethnicity_Decoded'].value_counts()
+print(ethnicity_counts)
+
+# Bar plot of ethnicity counts
+plt.figure(figsize=(8,5))
+ethnicity_counts.plot(kind='bar', color='green')
+plt.title("Number of Students per Ethnicity")
+plt.xlabel("Ethnicity")
+plt.ylabel("Count")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+

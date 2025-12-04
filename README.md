@@ -102,3 +102,21 @@ df = pd.read_csv("Student_performance_data.csv")
 # Apply Conversions
 df['Ethnicity_Decoded'] = df['Ethnicity'].map(ethnicity_conversion)
 # ... other conversions applied ...
+
+### 4.2. Ethnicity Distribution Count
+
+The following table summarizes the raw count of students for each ethnicity category, based on the 'Ethnicity_Decoded' column:
+
+| Ethnicity Category   | Number of Students (Count) |
+| ------------------- | -------------------------- |
+| **Caucasian**        | 1207                       |
+| **African American** | 493                        |
+| **Asian**            | 470                        |
+| **Other**            | 222                        |
+| **Total Students**   | 2392                       |
+
+The analysis shows a clear **imbalance (skew)** in the dataset, with the Caucasian group representing over half of the student population.
+
+![Bar chart showing the distribution of student counts across four ethnicity categories.](assets/ethnicity_count_bar_chart.png)
+
+*Figure 1: Distribution of student population by ethnicity. The chart visually confirms that the majority of students are in the Caucasian category, highlightin*

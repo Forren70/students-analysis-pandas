@@ -59,6 +59,7 @@ The data was corrected using the "Text to Columns" feature, specifying the dot a
 
 ![Initial Data Load and Formatting](assets/student_data_visual_load.png)
 
+*Figure 1: Initial load of the raw CSV in Excel, showing formatting issues in numerical columns before correction.*
 ---
 
 ### 3.2. Categorical Variable Decoding (`Student_performance_data_visual_text.xlsx`)
@@ -68,6 +69,8 @@ For maximum readability and initial analysis in Excel, the numeric codes (e.g., 
 This conversion was performed using **IF or IFS formulas** (e.g., `=PIÙ.SE(...)`) directly in the spreadsheet columns. The result was saved as **`Student_performance_data_visual_text.xlsx`**.
 
 ![Data after Text Decoding](assets/student_data_visual_text_decoded.png)
+
+*Figure 2: Data view after manual decoding of categorical variables in Excel, providing human-readable labels.*
 
 > **⚠️ Note on Process & Next Steps:** Executing these numerous conversions using Excel formulas is a **manual, time-consuming, and inflexible process**. This approach is not suitable for automation or large-scale data analysis.
 > 
@@ -120,4 +123,4 @@ The analysis shows a clear **imbalance (skew)** in the dataset, with the Caucasi
 
 ![Bar chart showing the distribution of student counts across four ethnicity categories.](assets/ethnicity_count_bar_chart.png)
 
-*Figure 1: Distribution of student population by ethnicity. The chart visually confirms that the majority of students are in the Caucasian category, highlightin*
+*Figure 3: Distribution of student population by ethnicity. The chart visually confirms that the majority of students are in the Caucasian category, highlighting a demographic bias in the dataset.*

@@ -121,9 +121,9 @@ fig, ax = plt.subplots(figsize=(10, 6))
 count_data.plot(kind='bar', ax=ax, width=0.8, color=custom_colors)
 
 # Customization and Visualization
-ax.set_title('Number of Students on by Ethnicity and Gender', fontsize=16, pad=20)
+ax.set_title('Number of Students by Ethnicity and Gender', fontsize=16, pad=20)
 ax.set_xlabel('Ethnicity', fontsize=12)
-ax.set_ylabel('Counts', fontsize=12)
+ax.set_ylabel('Count', fontsize=12)
 
 # Rotate X-axis labels for better readability
 plt.xticks(rotation=45, ha='right') 

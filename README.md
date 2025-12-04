@@ -127,7 +127,7 @@ The analysis shows a clear **imbalance (skew)** in the dataset, with the Caucasi
 
 *Figure 3: Distribution of student population by ethnicity. The chart visually confirms that the majority of students are in the Caucasian category, highlighting a demographic bias in the dataset.*
 
-## 4.3. Demographic Distribution by Gender
+### 4.3. Demographic Distribution by Gender
 
 To gain a deeper understanding of the dataset's composition, the student population count is **segmented by both Ethnicity and Gender**. This analysis reveals the distribution of males and females within each ethnic group.
 

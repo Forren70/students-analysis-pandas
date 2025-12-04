@@ -60,6 +60,8 @@ The data was corrected using the "Text to Columns" feature, specifying the dot a
 ![Initial Data Load and Formatting](assets/student_data_visual_load.png)
 
 *Figure 1: Initial load of the raw CSV in Excel, showing formatting issues in numerical columns before correction.*
+
+
 ---
 
 ### 3.2. Categorical Variable Decoding (`Student_performance_data_visual_text.xlsx`)

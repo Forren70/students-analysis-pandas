@@ -126,3 +126,31 @@ The analysis shows a clear **imbalance (skew)** in the dataset, with the Caucasi
 ![Bar chart showing the distribution of student counts across four ethnicity categories.](assets/ethnicity_count_bar_chart.png)
 
 *Figure 3: Distribution of student population by ethnicity. The chart visually confirms that the majority of students are in the Caucasian category, highlighting a demographic bias in the dataset.*
+
+## 4.3. Demographic Distribution by Gender
+
+To gain a deeper understanding of the dataset's composition, the student population count is **segmented by both Ethnicity and Gender**. This analysis reveals the distribution of males and females within each ethnic group.
+
+### Segmentation Summary
+
+The table below shows the exact breakdown of the student population across the two demographic dimensions:
+
+| Ethnicity Category | Male (Count) | Female (Count) | Total |
+| :--- | :--- | :--- | :--- |
+| **Caucasian** | 598 | 609 | 1207 |
+| **African American** | 240 | 253 | 493 |
+| **Asian** | 238 | 232 | 470 |
+| **Other** | 115 | 107 | 222 |
+| **Total Students** | **1191** | **1201** | **2392** |
+
+The total number of male (**1191**) and female (**1201**) students is nearly equal, indicating **gender balance** within the overall dataset.
+
+### Python Implementation (`student_data_analysis.py`)
+
+The chart is generated using the corrected Python code, which first enforces the desired X-axis order and then applies custom labels and colors to the gender segments.
+
+### Screenshot and Summary
+
+![Grouped bar chart showing the count of students on the Y-axis and Ethnicity on the X-axis (ordered: Caucasian, African American, Asian, Other), with bars grouped by Gender (Male in darkturquoise and Female in deeppink).](assets/ethnicity_gender_grouped_bar_chart.png)
+
+*Figure 4: Distribution of the student population segmented by Ethnicity and Gender. The chart confirms that the gender ratio is relatively balanced across all ethnic categories.*

@@ -82,6 +82,7 @@ print("Decoded file saved to:", output_path)
 
 # ---  VISUALIZATION ---
 
+# First plot
 # Count values in the Ethnicity_Decoded column
 ethnicity_counts = df['Ethnicity_Decoded'].value_counts()
 print(ethnicity_counts)
@@ -96,3 +97,42 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
+# Second plot
+
+# Data Preparation: Count the occurrences of 'Gender' for each 'Ethnicity_Decoded'
+# We group by both columns and count the occurrences, then use unstack() 
+# to pivot the 'Gender' counts into columns, suitable for grouped plotting.
+count_data = df.groupby(['Ethnicity_Decoded', 'Gender']).size().unstack()
+
+# Define the correct order of ethnicities for the X-axis, matching the first plot
+order = ['Caucasian', 'African American', 'Asian', 'Other']
+# Reindex the DataFrame to impose the correct order on the X-axis
+count_data = count_data.reindex(order)
+
+# define custom colors (skyblue for Male, pink for Female)
+gender_labels_map = {0: 'Male', 1: 'Female'}
+count_data = count_data.rename(columns=gender_labels_map)
+custom_colors = ['darkturquoise', 'deeppink']
+
+# Plotting using Matplotlib's plot.bar() method
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot the grouped bar chart directly from the resulting DataFrame
+count_data.plot(kind='bar', ax=ax, width=0.8, color=custom_colors)
+
+# Customization and Visualization
+ax.set_title('Number of Students on by Ethnicity and Gender', fontsize=16, pad=20)
+ax.set_xlabel('Ethnicity', fontsize=12)
+ax.set_ylabel('Counts', fontsize=12)
+
+# Rotate X-axis labels for better readability
+plt.xticks(rotation=45, ha='right') 
+
+# Move the legend
+ax.legend(title='Gender', loc='upper right')
+
+# Add horizontal grid lines
+ax.grid(axis='y', linestyle='--', alpha=0.6)
+
+plt.tight_layout()
+plt.show()

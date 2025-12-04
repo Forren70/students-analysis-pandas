@@ -108,7 +108,7 @@ df['Ethnicity_Decoded'] = df['Ethnicity'].map(ethnicity_conversion)
 The following table summarizes the raw count of students for each ethnicity category, based on the 'Ethnicity_Decoded' column:
 
 | Ethnicity Category   | Number of Students (Count) |
-| ------------------- | -------------------------- |
+| :--- | :--- |
 | **Caucasian**        | 1207                       |
 | **African American** | 493                        |
 | **Asian**            | 470                        |

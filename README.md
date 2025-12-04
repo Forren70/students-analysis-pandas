@@ -102,6 +102,7 @@ df = pd.read_csv("Student_performance_data.csv")
 # Apply Conversions
 df['Ethnicity_Decoded'] = df['Ethnicity'].map(ethnicity_conversion)
 # ... other conversions applied ...
+```
 
 ### 4.2. Ethnicity Distribution Count
 

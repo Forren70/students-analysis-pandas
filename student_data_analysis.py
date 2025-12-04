@@ -136,3 +136,59 @@ ax.grid(axis='y', linestyle='--', alpha=0.6)
 
 plt.tight_layout()
 plt.show()
+
+# ---  GPA analysis (Grade Point Average) ---
+
+GPA_min = df['GPA'].min()
+GPA_max = df['GPA'].max()
+GPA_average = df['GPA'].mean()
+
+print(f"Min GPA: {GPA_min}\n")
+print(f"Max GPA: {GPA_max}\n")
+print(f"Mean GPA: {GPA_average}\n")
+
+# GPA by Gender
+GPA_min_female = df.loc[df['Gender_Decoded'] == 'Female', 'GPA'].min()
+GPA_max_female = df.loc[df['Gender_Decoded'] == 'Female', 'GPA'].max()
+GPA_average_female = df.loc[df['Gender_Decoded'] == 'Female', 'GPA'].mean()
+
+print(f"Min GPA Females: {GPA_min_female}\n")
+print(f"Max GPA Females: {GPA_max_female}\n")
+print(f"Mean GPA Females: {GPA_average_female}\n")
+
+GPA_min_male = df.loc[df['Gender_Decoded'] == 'Male', 'GPA'].min()
+GPA_max_male = df.loc[df['Gender_Decoded'] == 'Male', 'GPA'].max()
+GPA_average_male = df.loc[df['Gender_Decoded'] == 'Male', 'GPA'].mean()
+
+print(f"Min GPA Males: {GPA_min_male}\n")
+print(f"Max GPA Males: {GPA_max_male}\n")
+print(f"Mean GPA Males: {GPA_average_male}\n")
+
+
+# Calculate mean GPA for each combination of Ethnicity and Gender
+GPA_mean = df.groupby(['Ethnicity_Decoded', 'Gender_Decoded'])['GPA'].mean()
+
+print(GPA_mean)
+
+
+# Prepare GPA data for plotting grouped bars
+GPA_mean_unstacked = GPA_mean.unstack()  # Ethnicity as index, Gender as columns
+
+# ddefine custom colors (Female, Male)
+custom_colors = ['deeppink', 'darkturquoise']  # Female, Male
+
+# Plotting using Matplotlib's plot.bar() method
+fig, ax = plt.subplots(figsize=(10, 6))
+GPA_mean_unstacked.plot(kind='bar', ax=ax, width=0.8, color=custom_colors)
+
+# Labels and title
+ax.set_xlabel('Ethnicity')
+ax.set_ylabel('Average GPA')
+ax.set_title('Average GPA by Ethnicity and Gender')
+ax.legend(title='Gender')
+
+# Rotate X-axis labels for readability
+plt.xticks(rotation=45, ha='right')
+
+plt.tight_layout()
+plt.show()

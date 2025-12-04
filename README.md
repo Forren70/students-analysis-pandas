@@ -154,3 +154,57 @@ The chart is generated using the corrected Python code, which first enforces the
 ![Grouped bar chart showing the count of students on the Y-axis and Ethnicity on the X-axis (ordered: Caucasian, African American, Asian, Other), with bars grouped by Gender (Male in darkturquoise and Female in deeppink).](assets/ethnicity_gender_grouped_bar_chart.png)
 
 *Figure 4: Distribution of the student population segmented by Ethnicity and Gender. The chart confirms that the gender ratio is relatively balanced across all ethnic categories.*
+
+### 4.4 📊 GPA Analysis (Grade Point Average)
+
+This section details the initial analysis of the student Grade Point Average (GPA) and its distribution across gender and ethnic groups.
+
+---
+
+#### 4.4.1 General and Gender-Specific GPA Statistics
+
+The Python code first calculates the overall GPA statistics and then segments the minimum, maximum, and mean GPA by gender.
+
+**Overall GPA:**
+* **Min GPA:** 0.0
+* **Max GPA:** 4.0
+* **Mean GPA:** **1.906**
+
+**Segmented GPA Statistics:**
+
+| Statistic | Female | Male |
+| :--- | :--- | :--- |
+| **Min GPA** | 0.0 | 0.0 |
+| **Max GPA** | 4.0 | 4.0 |
+| **Mean GPA** | 1.894 | **1.919** |
+
+> **Summary:** While the range is identical, the **Male group exhibits a slightly higher mean GPA ($1.919$)** compared to the Female group ($1.894$). The overall mean GPA suggests the data set leans towards a lower academic performance range.
+
+---
+
+#### 4.4.2 Segmented Average GPA by Ethnicity and Gender
+
+To understand variations, the average GPA was segmented by combining both **Ethnicity** and **Gender**.
+
+| Ethnicity | Gender | Average GPA |
+| :--- | :--- | :--- |
+| **African American** | Female | 1.8915 |
+| | **Male** | **1.9994** |
+| **Asian** | **Female** | **1.9467** |
+| | Male | 1.8954 |
+| **Caucasian** | Female | 1.8697 |
+| | **Male** | **1.8823** |
+| **Other** | Female | 1.9181 |
+| | **Male** | **1.9825** |
+
+> **Key Finding:** Males achieved a higher average GPA across almost all ethnic groups, with the **Asian** group being the sole exception where **Females outperformed Males**.
+
+---
+
+#### 4.4.3 Visualization: Average GPA by Ethnicity and Gender
+
+The segmented data is visualized using a grouped bar chart.
+
+![Grouped bar chart showing Average GPA on the Y-axis and Ethnicity on the X-axis, with bars grouped by Gender (Female in deeppink and Male in darkturquoise).](assets/gpa_ethnicity_gender_grouped_bar_chart.png)
+
+*Figure 5: Average GPA segmented by Ethnicity and Gender. This visualization highlights the performance differences across subgroups.*

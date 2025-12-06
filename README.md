@@ -208,3 +208,14 @@ The segmented data is visualized using a grouped bar chart.
 ![Grouped bar chart showing Average GPA on the Y-axis and Ethnicity on the X-axis, with bars grouped by Gender (Female in deeppink and Male in darkturquoise).](assets/gpa_ethnicity_gender_grouped_bar_chart.png)
 
 *Figure 5: Average GPA segmented by Ethnicity and Gender. This visualization highlights the performance differences across subgroups.*
+
+## 5. 📊 Grade Class Distribution (Histogram)
+
+This section visualizes the distribution of student performance across the five **GradeClass** categories ('A' to 'F'). The values are presented as **relative frequencies (percentages)**, providing a clear overview of the performance breakdown in the entire dataset.
+
+**Comment:**
+The distribution reveals a strongly **left-skewed** profile, indicating that the majority of students fall into the lower performance categories. Specifically, **Grade F** represents the largest segment, accounting for **50.7%** of the student body. This is followed by **Grade D** at **17.2%** and **Grade C** at **16.3%**.
+
+The highest performance categories are significantly smaller, with **Grade B** at **11.2%** and **Grade A** representing only **4.6%** of the population. This initial view highlights a critical performance gap that requires deeper analysis into correlating factors such as parental education and tutoring.
+
+![Figura 6 - Grade Class Distribution Bar Chart](assets/grade_class_distribution.png)

@@ -137,7 +137,7 @@ ax.grid(axis='y', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
 
-# ---  GPA analysis (Grade Point Average) ---
+# ---  GPA ANALYSIS (GRADE POINT AVERAGE) ---
 
 GPA_min = df['GPA'].min()
 GPA_max = df['GPA'].max()
@@ -174,7 +174,7 @@ print(GPA_mean)
 # Prepare GPA data for plotting grouped bars
 GPA_mean_unstacked = GPA_mean.unstack()  # Ethnicity as index, Gender as columns
 
-# ddefine custom colors (Female, Male)
+# Define custom colors (Female, Male)
 custom_colors = ['deeppink', 'darkturquoise']  # Female, Male
 
 # Plotting using Matplotlib's plot.bar() method
@@ -192,3 +192,33 @@ plt.xticks(rotation=45, ha='right')
 
 plt.tight_layout()
 plt.show()
+
+
+# --- GRADE CLASS DISTRIBUTION (Histograms) ---
+
+# 1. Count relative frequencies
+grade_percentages = df['GradeClass_Decoded'].value_counts(normalize=True) * 100
+
+# 2. Reorder data
+ordered_classes = ['A', 'B', 'C', 'D', 'F']
+grade_percentages = grade_percentages.reindex(ordered_classes, fill_value=0)
+
+# Print Grade Class exact percentage values
+print("\n--- Grade Class Distribution in Percentage ---")
+print(grade_percentages)
+
+# 3. Create bar plot
+plt.figure(figsize=(9, 6))
+plt.bar(
+    x=grade_percentages.index,
+    height=grade_percentages.values,
+    color='#1f77b4'
+)
+
+plt.title('Distribution of Student Grade Classes (Percentage)', fontsize=16, fontweight='bold')
+plt.xlabel('Grade Class', fontsize=13)
+plt.ylabel('Relative Frequency (Percentage)', fontsize=13)
+
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+

@@ -209,7 +209,7 @@ The segmented data is visualized using a grouped bar chart.
 
 *Figure 5: Average GPA segmented by Ethnicity and Gender. This visualization highlights the performance differences across subgroups.*
 
-## 5. 📊 Grade Class Distribution (Histogram)
+## 5. 📊 Grade Class Distribution (Histograms)
 
 This section visualizes the distribution of student performance across the five **GradeClass** categories ('A' to 'F'). The values are presented as **relative frequencies (percentages)**, providing a clear overview of the performance breakdown in the entire dataset.
 

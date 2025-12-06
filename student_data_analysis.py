@@ -222,28 +222,3 @@ plt.ylabel('Relative Frequency (Percentage)', fontsize=13)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.show()
 
-import matplotlib.pyplot as plt
-
-# --- SCATTER PLOT: GPA vs. Study Time ---
-
-plt.figure(figsize=(10, 6))
-
-# Creazione del grafico a dispersione
-plt.scatter(
-    x=df['StudyTimeWeekly'],  # Variabile indipendente sull'asse X
-    y=df['GPA'],              # Variabile dipendente sull'asse Y
-    alpha=0.6,                # Trasparenza per visualizzare la densità dei punti
-    color='purple',
-    s=20                      # Dimensione dei punti
-)
-
-# Aggiunta di titoli ed etichette
-plt.title('Relazione tra Tempo di Studio Settimanale e GPA', fontsize=16, fontweight='bold')
-plt.xlabel('Tempo di Studio Settimanale (Ore)', fontsize=13)
-plt.ylabel('GPA (Media Voti)', fontsize=13)
-
-# Aggiungi una griglia per una migliore lettura dei valori
-plt.grid(True, linestyle='--', alpha=0.7)
-
-# Mostra il grafico
-plt.show()

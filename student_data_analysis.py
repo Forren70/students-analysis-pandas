@@ -252,7 +252,7 @@ plt.bar(
     color=colors
 )
 
-plt.title('Average Gpa By Tutoring Status', fontsize=16, fontweight='bold', pad=20)
+plt.title('Average GPA By Tutoring Status', fontsize=16, fontweight='bold', pad=20)
 plt.xlabel('Tutoring Received')
 plt.ylabel('Average GPA')
 plt.ylim(values.min() * 0.9, values.max() * 1.1) 

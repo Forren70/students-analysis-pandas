@@ -61,7 +61,6 @@ The data was corrected using the "Text to Columns" feature, specifying the dot a
 
 *Figure 1: Initial load of the raw CSV in Excel, showing formatting issues in numerical columns before correction.*
 
-
 ---
 
 ### 3.2. Categorical Variable Decoding (`Student_performance_data_visual_text.xlsx`)
@@ -209,6 +208,8 @@ The segmented data is visualized using a grouped bar chart.
 
 *Figure 5: Average GPA segmented by Ethnicity and Gender. This visualization highlights the performance differences across subgroups.*
 
+---
+
 ## 5. 📊 Grade Class Distribution (Histograms)
 
 This section visualizes the distribution of student performance across the five **GradeClass** categories ('A' to 'F'). The values are presented as **relative frequencies (percentages)**, providing a clear overview of the performance breakdown in the entire dataset.
@@ -218,4 +219,36 @@ The distribution reveals a strongly **left-skewed** profile, indicating that the
 
 The highest performance categories are significantly smaller, with **Grade B** at **11.2%** and **Grade A** representing only **4.6%** of the population. This initial view highlights a critical performance gap that requires deeper analysis into correlating factors such as weekly study time and parental education.
 
-![Figura 6 - Grade Class Distribution Bar Chart](assets/grade_class_distribution.png)
+![Figure 6 - Grade Class Distribution Bar Chart](assets/grade_class_distribution.png)
+
+---
+
+## 📉 6. Correlation Analysis: GPA vs. Weekly Study Time
+
+This section analyzes the relationship between the continuous variable **Weekly Study Time** (`StudyTimeWeekly`) and the primary academic performance metric, the **Grade Point Average** (`GPA`).
+
+### Scatter Plot Visualization: `GPA Vs Weekly study time of students`
+
+![Figure 7 - GPA Vs Weekly Study Time scatter plot](assets/GPA_Vs_Weekly_Study_Time_scatter_plot.png)
+
+*Figure 7: Scatter plot showing the distribution of student GPA scores relative to their reported weekly study time.*
+
+---
+
+### 6.1. Findings and Interpretation
+
+The analysis of the scatter plot reveals a crucial insight regarding academic performance in this dataset:
+
+There is **no clear positive correlation** between the amount of time a student spends studying weekly and their final Grade Point Average. The dispersion of the data points is high, indicating that even students who study many hours can obtain low GPAs.
+
+The fact that the scatter plot does not show a distinct upward trend (and shows several students with high study time and low GPA) strongly suggests that **weekly study time is not the single, determining factor** of academic performance in this specific dataset.
+
+### 6.2. ❓ Possible Causes for Low GPA Despite High Study Time
+
+The observation that students invest significant time in studying yet yield poor results suggests that other variables are playing a more influential role. Here are the possible contributing factors:
+
+* **Quality of Study vs. Quantity:** The `StudyTimeWeekly` feature measures the **quantity** of hours dedicated to studying, not the **effectiveness** or **quality** of that time. A student might study 20 hours a week inefficiently, while another studies 10 hours with targeted focus.
+* **Systemic Factors and Support (Reverse Causality):**
+    * **Tutoring** (`Tutoring_Decoded`): A high study time may be an **effect**, not a cause. The student might be devoting many hours to study **because they are struggling** academically and are desperately trying to catch up. The low GPA is, in this case, the reason for the high study time, not the reverse.
+    * **Parental Education** (`Education_Decoded`): The level of support, guidance, or preparation that parents can provide can influence the effectiveness of the study efforts.
+* **The Weight of the 'F' Grade (50.7%):** As previously observed in Section 5, over half of the student body falls into the 'F' grade class. It is likely that a large portion of these struggling students is dedicating substantial hours in a desperate attempt to pass their courses, but without success due to the systemic or quality-related issues listed above.

@@ -90,7 +90,7 @@ print(ethnicity_counts)
 # Bar plot of ethnicity counts
 plt.figure(figsize=(8,5))
 ethnicity_counts.plot(kind='bar', color='green')
-plt.title("Number of Students per Ethnicity")
+plt.title("Number of Students per Ethnicity", fontsize=16, fontweight='bold', pad=20)
 plt.xlabel("Ethnicity")
 plt.ylabel("Count")
 plt.xticks(rotation=45)
@@ -121,7 +121,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 count_data.plot(kind='bar', ax=ax, width=0.8, color=custom_colors)
 
 # Customization and Visualization
-ax.set_title('Number of Students by Ethnicity and Gender', fontsize=16, pad=20)
+ax.set_title('Number of Students by Ethnicity and Gender', fontsize=16, fontweight='bold', pad=20)
 ax.set_xlabel('Ethnicity', fontsize=12)
 ax.set_ylabel('Count', fontsize=12)
 
@@ -184,7 +184,7 @@ GPA_mean_unstacked.plot(kind='bar', ax=ax, width=0.8, color=custom_colors)
 # Labels and title
 ax.set_xlabel('Ethnicity')
 ax.set_ylabel('Average GPA')
-ax.set_title('Average GPA by Ethnicity and Gender')
+ax.set_title('Average GPA by Ethnicity and Gender', fontsize=16, fontweight='bold', pad=20)
 ax.legend(title='Gender')
 
 # Rotate X-axis labels for readability
@@ -215,10 +215,21 @@ plt.bar(
     color='#1f77b4'
 )
 
-plt.title('Distribution of Student Grade Classes (Percentage)', fontsize=16, fontweight='bold')
+plt.title('Distribution of Student Grade Classes (Percentage)', fontsize=16, fontweight='bold', pad=20)
 plt.xlabel('Grade Class', fontsize=13)
 plt.ylabel('Relative Frequency (Percentage)', fontsize=13)
 
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.show()
 
+# ---  SCATTER PLOT GPA Vs WEEKLY STUDY TIME ---
+
+x = df['StudyTimeWeekly']
+y = df['GPA']
+
+plt.scatter(x, y, color='red', s=10, marker='o')
+
+plt.xlabel('Weekly study time')
+plt.ylabel('GPA')
+plt.title('GPA Vs Weekly Study Time of students', fontsize=16, fontweight='bold', pad=20)
+plt.show()

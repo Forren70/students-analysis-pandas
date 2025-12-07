@@ -250,3 +250,34 @@ The observation that students invest significant time in studying yet yield poor
     * **Tutoring** (`Tutoring_Decoded`): A high study time may be an **effect**, not a cause. The student might be devoting many hours to study **because they are struggling** academically and are desperately trying to catch up. The low GPA is, in this case, the reason for the high study time, not the reverse.
     * **Parental Education** (`Education_Decoded`): The level of support, guidance, or preparation that parents can provide can influence the effectiveness of the study efforts.
 * **The Weight of the 'F' Grade (50.7%):** As previously observed in Section 5, over half of the student body falls into the 'F' grade class. It is likely that a large portion of these struggling students is dedicating substantial hours in a desperate attempt to pass their courses, but without success due to the systemic or quality-related issues listed above.
+
+---
+
+## 🎓 7. Comparative Analysis: Average GPA by Tutoring Status
+
+This analysis tests the hypothesis that receiving external support, specifically **Tutoring** (`Tutoring_Decoded`), is a stronger predictor of academic performance than simply the hours spent studying (as suggested by the weak correlation found in Section 6).
+
+### Key Finding
+
+| Tutoring Status | Average GPA |
+| :--- | :--- |
+| **No** | 1.819 |
+| **Yes** | **2.108** |
+
+Students who received tutoring achieved an **average GPA of 2.108**, which is significantly higher (approximately **+16%**) than students who did not receive tutoring (average GPA of 1.819).
+
+### Visualization: `Average GPA By Tutoring Status`
+
+![Figure 8 - Average GPA By Tutoring Status Bar Chart](assets/average_GPA_By_Tutoring Status.png) 
+
+*Figure 8: Bar plot comparing the average GPA of students who receive tutoring versus those who do not.*
+
+---
+
+### 7.1. Interpretation and Impact
+
+The results provide a strong contrast to the findings from the previous section (GPA vs. Weekly Study Time):
+
+1.  **Tutoring as a Positive Predictor:** Unlike raw study hours, the **Tutoring Status** shows a clear and positive relationship with the GPA. This strongly suggests that the **quality or targeted nature of study** (often provided by tutoring) is a far more influential factor than the mere quantity of time dedicated to studying.
+2.  **Addressing the 'F' Grade Problem:** Given that the dataset is heavily skewed towards low performance (50.7% 'F' grades), the students receiving tutoring are successfully moving the average score above the 2.0 threshold (Grade D/C border), indicating that this support helps students overcome significant performance deficits.
+3.  **Hypothesis Validation:** The initial hypothesis is **validated**: the presence of support (`Tutoring`) is a better predictor of improved performance than the quantitative metric of `StudyTimeWeekly`.

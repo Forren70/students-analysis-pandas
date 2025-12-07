@@ -233,3 +233,30 @@ plt.xlabel('Weekly study time')
 plt.ylabel('GPA')
 plt.title('GPA Vs Weekly Study Time of students', fontsize=16, fontweight='bold', pad=20)
 plt.show()
+
+
+# ---  AVERAGE GPA BY TUTORING STATUS (BAR PLOT) ---
+
+GPA_by_tutoring = df.groupby('Tutoring_Decoded')['GPA'].mean()
+
+print(GPA_by_tutoring)
+
+categories = GPA_by_tutoring.index
+values = GPA_by_tutoring.values    
+colors = ['salmon', 'skyblue'] 
+
+plt.figure(figsize=(7, 5))
+plt.bar(
+    x=categories, 
+    height=values, 
+    color=colors
+)
+
+plt.title('Average Gpa By Tutoring Status', fontsize=16, fontweight='bold', pad=20)
+plt.xlabel('Tutoring Received')
+plt.ylabel('Average GPA')
+plt.ylim(values.min() * 0.9, values.max() * 1.1) 
+plt.xticks(rotation=0)
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()

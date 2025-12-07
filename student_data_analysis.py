@@ -260,3 +260,29 @@ plt.xticks(rotation=0)
 plt.grid(axis='y', linestyle='--', alpha=0.6)
 plt.tight_layout()
 plt.show()
+
+
+# --- AVERAGE GPA BY PARENTAL EDUCATION (BAR PLOT)
+
+GPA_by_parents_education = df.groupby('Education_Decoded')['GPA'].mean()
+GPA_by_parents_education = GPA_by_parents_education.sort_values(ascending=False)
+print(GPA_by_parents_education)
+
+categories = GPA_by_parents_education.index
+values = GPA_by_parents_education.values    
+colors = ['lightgreen', 'orange', 'violet', 'cyan', 'magenta']  
+plt.figure(figsize=(9, 6))
+plt.bar(
+    x=categories, 
+    height=values, 
+    color=colors
+)   
+plt.title('Average GPA By Parental Education Level', fontsize=16, fontweight='bold', pad=20)
+plt.xlabel('Parental Education Level')      
+plt.ylabel('Average GPA')
+plt.ylim(values.min() * 0.9, values.max() * 1.1)  
+plt.xticks(rotation=30, ha='right') 
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.tight_layout()  
+plt.show()
+

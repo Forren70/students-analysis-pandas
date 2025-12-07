@@ -281,3 +281,42 @@ The results provide a strong contrast to the findings from the previous section 
 1.  **Tutoring as a Positive Predictor:** Unlike raw study hours, the **Tutoring Status** shows a clear and positive relationship with the GPA. This strongly suggests that the **quality or targeted nature of study** (often provided by tutoring) is a far more influential factor than the mere quantity of time dedicated to studying.
 2.  **Addressing the 'F' Grade Problem:** Given that the dataset is heavily skewed towards low performance (50.7% 'F' grades), the students receiving tutoring are successfully moving the average score above the 2.0 threshold (Grade D/C border), indicating that this support helps students overcome significant performance deficits.
 3.  **Hypothesis Validation:** The initial hypothesis is **validated**: the presence of support (`Tutoring`) is a better predictor of improved performance than the quantitative metric of `StudyTimeWeekly`.
+
+---
+
+## 👨‍👩‍👧‍👦 8. Comparative Analysis: Average GPA by Parental Education Level
+
+This section analyzes the relationship between the level of **Parental Education** (`Education_Decoded`) and the student's **Average GPA**. This factor is often considered a strong socioeconomic predictor of academic success.
+
+### Key Findings
+
+The results show a **counter-intuitive distribution** of average GPA scores, contrasting general academic expectations:
+
+| Education Level | Average GPA |
+| :--- | :--- |
+| **High School** | **1.944** |
+| Some College | 1.930 |
+| None | 1.893 |
+| Higher | 1.816 |
+| Bachelor's | 1.809 |
+
+The highest average GPAs are found among students whose parents have a **High School** or **Some College** education, while the lowest GPAs are associated with the highest parental education levels (**Bachelor's** and **Higher** degrees).
+
+### Visualization: Average GPA By Parental Education Level
+
+![Average GPA by Parental Education Level Bar Chart](assets/Average_GPA_By_Parental_Education_Level.png)
+
+*Figure 9: Bar plot comparing the average GPA segmented by the five levels of parental education.*
+
+---
+
+### 8.1. Interpretation and Implications
+
+The lack of a direct positive correlation (where higher education leads to higher GPA) suggests the influence of **confounding factors** specific to this dataset:
+
+1.  **Socioeconomic Heterogeneity:** The 'Parental Education' category alone may not capture the full socioeconomic status or the family's direct involvement. Families with higher degrees might belong to demographics (e.g., specific ethnic groups or income levels) that, in this particular dataset, have lower overall academic scores for other systemic reasons.
+2.  **Reverse Causality in Support:** Parents with higher degrees might be less involved in daily school work, assuming the student is self-sufficient, or the pressure to perform might be higher, leading to stress that negatively affects the GPA.
+3.  **Tutoring Effect:** As confirmed in Section 7, **Tutoring** is a key predictor. It is possible that students from families with lower formal education levels are more likely to seek or receive practical, direct tutoring support (which was effective), while students from higher-education families may rely solely on their own resources, or the tutoring factor may not be evenly distributed across these educational tiers.
+4.  **Data Skew:** Given the overall low mean GPA (around 1.9) and the high proportion of 'F' grades, the dataset's performance issues are deeply rooted and transcend simple parental education categories.
+
+**Conclusion:** Parental education is not a simple linear predictor in this dataset, and its influence is likely masked or complicated by other variables such as ethnicity, direct support strategies, or underlying data distribution issues.

@@ -148,8 +148,6 @@ The total number of male (**1191**) and female (**1201**) students is nearly equ
 
 The chart is generated using the corrected Python code, which first enforces the desired X-axis order and then applies custom labels and colors to the gender segments.
 
-### Screenshot and Summary
-
 ![Grouped bar chart showing the count of students on the Y-axis and Ethnicity on the X-axis (ordered: Caucasian, African American, Asian, Other), with bars grouped by Gender (Male in darkturquoise and Female in deeppink).](assets/ethnicity_gender_grouped_bar_chart.png)
 
 *Figure 4: Distribution of the student population segmented by Ethnicity and Gender. The chart confirms that the gender ratio is relatively balanced across all ethnic categories.*

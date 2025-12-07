@@ -266,9 +266,9 @@ This analysis tests the hypothesis that receiving external support, specifically
 
 Students who received tutoring achieved an **average GPA of 2.108**, which is significantly higher (approximately **+16%**) than students who did not receive tutoring (average GPA of 1.819).
 
-### Visualization: `Average GPA By Tutoring Status`
+### Visualization: Average GPA By Tutoring Status
 
-![Figure 8 - Average GPA By Tutoring Status Bar Chart](assets/average_GPA_By_Tutoring Status.png) 
+![Average GPA by Tutoring Status Bar Chart](assets/average_GPA_By_Tutoring_Status.png)
 
 *Figure 8: Bar plot comparing the average GPA of students who receive tutoring versus those who do not.*
 

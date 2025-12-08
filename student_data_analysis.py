@@ -286,3 +286,43 @@ plt.grid(axis='y', linestyle='--', alpha=0.6)
 plt.tight_layout()  
 plt.show()
 
+
+# --- AVERAGE GPA BY PARENTAL SUPPORT (BAR PLOT WITH LABELS)
+# ParentalSupport codes: 0: None, 1: Low, 2: Moderate, 3: High, 4: Very High
+
+support_labels = {
+0: 'None',
+1: 'Low',
+2: 'Moderate',
+3: 'High',
+4: 'Very High'
+}
+
+GPA_by_parents_support = df.groupby('ParentalSupport')['GPA'].mean()
+
+GPA_by_parents_support.index = GPA_by_parents_support.index.map(support_labels)
+
+ordered_labels = ['None', 'Low', 'Moderate', 'High', 'Very High']
+
+GPA_by_parents_support = GPA_by_parents_support.reindex(ordered_labels)
+
+print(GPA_by_parents_support)
+
+categories = GPA_by_parents_support.index
+values = GPA_by_parents_support.values
+colors = ['lightgray', 'lightcoral', 'gold', 'lightblue', 'lightgreen']
+
+plt.figure(figsize=(9, 6))
+plt.bar(
+x=categories,
+height=values,
+color=colors
+)
+plt.title('Average GPA By Parental Support Level', fontsize=16, fontweight='bold', pad=20)
+plt.xlabel('Parental Support Level')
+plt.ylabel('Average GPA')
+plt.ylim(values.min() * 0.9, values.max() * 1.1)
+plt.xticks(rotation=30, ha='right')
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()

@@ -321,26 +321,57 @@ The lack of a direct positive correlation (where higher education leads to highe
 
 **Conclusion:** Parental education is not a simple linear predictor in this dataset, and its influence is likely masked or complicated by other variables such as ethnicity, direct support strategies, or underlying data distribution issues.
 
-## 🎯 9. EXECUTIVE SUMMARY AND NEXT STEPS
+---
+
+## 9. 📈 COMPARATIVE ANALYSIS: PARENTAL SUPPORT IMPACT
+
+This section documents the exploration of **Parental Support** as a predictor of academic performance (GPA), revealing it to be the most strongly and linearly correlated factor in the dataset.
+
+The analysis calculated the mean GPA for each of the five Parental Support categories (None, Low, Moderate, High, Very High) to determine the relationship between the level of support and academic outcome.
+
+### Key Findings and Visualization
+
+The analysis confirms a **strong, positive, and progressive correlation** between the level of parental support and the student's average GPA. This factor demonstrated the clearest linear trend among all predictors explored.
+
+The results are summarized as follows:
+
+| Parental Support Level | Average GPA |
+| :--- | :--- |
+| **None** | $1.540$ |
+| **Low** | $1.756$ |
+| **Moderate** | $1.884$ |
+| **High** | $2.042$ |
+| **Very High** | $2.192$ |
+
+![Screenshot 10 - Average_GPA_By_Parental_Support_Level.png](assets/Average_GPA_By_Parental_Support_Level.png)
+
+**Figure 10: Average GPA By Parental Support Level.** *This visualization clearly demonstrates that as the level of parental support increases, the average GPA consistently rises, highlighting the factor's significance in student academic outcomes.*
+
+---
+
+## 🎯 10. EXECUTIVE SUMMARY AND NEXT STEPS
 
 The comparative analysis of the student performance data revealed several crucial and sometimes counter-intuitive insights regarding the factors that truly influence academic outcomes in this specific dataset.
 
-### 9.1. Key Findings
+### 10.1. Key Findings
 
 | Factor | Result | Implication |
 | :--- | :--- | :--- |
+| **Parental Support Level** (Sec. 9) | ***Strongest linear correlation with GPA found.*** | ***Every incremental increase in parental support corresponds to a consistent and measurable rise in average student GPA, making it the most reliable predictor.*** |
+| **Tutoring Status** (Sec. 7) | **Strong positive correlation with GPA.** | **Targeted intervention (Tutoring) is highly effective.** Students with tutoring achieved a significantly higher average GPA. |
 | **Study Time** (Sec. 6) | **No clear positive correlation with GPA.** | Quantity of study is not the determining factor; quality is more important. |
-| **Tutoring Status** (Sec. 7) | **Strong positive correlation with GPA.** | **Tutoring is the strongest positive predictor found.** Students with tutoring achieved +16% higher average GPA. |
 | **Parental Education** (Sec. 8) | **Counter-intuitive distribution.** | Higher parental degrees (Bachelor's/Higher) correlated with lower student GPA, suggesting confounding factors (e.g., family support, stress, or other unmeasured variables) are at play. |
-| **Demographics** (Sec. (Sec. 4, 7 & 8)) | **Gender is balanced; Ethnicity is skewed.** | While the overall dataset is dominated by the Caucasian group, the distribution of final `GradeClass` (A–F) is **uniformly distributed across all ethnic groups** (Analysis skipped for redundancy). |
+| **Demographics** (Sec. 4, 7 & 8) | **Gender is balanced; Ethnicity is skewed.** | While the overall dataset is dominated by the Caucasian group, the distribution of final `GradeClass` (A–F) is **uniformly distributed across all ethnic groups** (Analysis skipped for redundancy). |
 
-### 9.2. Conclusion: Performance Gap
+### 10.2. Conclusion: Performance Gap
 
-The dataset exhibits a severe **performance gap**, with over **50% of students receiving a final Grade 'F'** (Section 5). The analysis strongly indicates that **targeted intervention (Tutoring)** is the most effective current strategy for mitigating this gap, outperforming both general study time and the presumed advantage of highly educated parents.
+The dataset exhibits a severe **performance gap**, with over **50% of students receiving a final Grade 'F'** (Section 5). The analysis strongly indicates that **Parental Support** is the most potent environmental factor for improving performance, closely followed by **Targeted Intervention (Tutoring)**. These two factors are the most effective strategies for mitigating this gap, significantly outperforming both general study time and the presumed advantage of highly educated parents.
 
-### 9.3. Future Work and Predictive Modeling
+### 10.3. Future Work and Predictive Modeling
 
 To move beyond comparative statistics and isolate the true impact of each variable, the project must transition into **predictive modeling**:
 
-* **Hypothesis Testing:** Utilize regression analysis to quantify the strength of the relationship between variables like `Tutoring`, `StudyTimeWeekly`, and `GPA`.
+* **Hypothesis Testing:** Utilize regression analysis to quantify the strength of the relationship between variables like `ParentalSupport`, `Tutoring`, `StudyTimeWeekly`, and `GPA`.
 * **Predictive Model:** Develop a classification model (e.g., Logistic Regression or Random Forest) to accurately predict the likelihood of a student achieving a low grade (`GradeClass` = 'F'), using all available features (including the numeric codes). This will provide actionable insights for intervention strategies.
+
+---
